@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <title>Analyse prédictive des zones de tirs en handball – Bilal Delais</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+  <body data-page="project-handball" data-resume-base="../">
+    <!-- Header identique aux autres pages -->
+    <header class="site-header" id="site-header">
+      <div class="container header-bar">
+        <a class="brand" href="../index.html#top" aria-label="Accueil" data-i18n-aria-label="nav.brand">Bilal&nbsp;Delais</a>
+        <div class="header-actions">
+          <button class="lang-toggle" type="button" id="language-toggle" data-i18n="toggle.label" data-i18n-aria-label="toggle.aria">Version anglaise</button>
+          <a class="btn btn-outline cv-link" href="../assets/resume_french.pdf" target="_blank" data-i18n="nav.cv">CV</a>
+          <button class="nav-toggle" type="button" aria-label="Ouvrir la navigation" aria-expanded="false" data-i18n-aria-label="nav.toggle">☰</button>
+        </div>
+      </div>
+    </header>
+
+    <aside class="side-nav" id="side-nav" aria-hidden="true" inert>
+      <nav class="nav">
+        <a href="../index.html#top" data-i18n="nav.home">Accueil</a>
+        <a href="../experiences.html" data-i18n="nav.experiences">Expériences</a>
+        <a href="../projects.html" data-i18n="nav.projects">Projets</a>
+        <a href="../loisirs.html" data-i18n="nav.hobbies">Loisirs</a>
+        <a href="../contact.html" data-i18n="nav.contact">Contact</a>
+      </nav>
+    </aside>
+
+    <main class="section">
+      <div class="container">
+        <h1 class="title" data-i18n="project.handball.title">Analyse prédictive des zones de tirs en handball</h1>
+        <p class="muted" data-i18n="project.handball.meta">Machine learning • Data Science • 2024</p>
+
+        <section class="reveal">
+          <h2 data-i18n="project.handball.context.title">Contexte</h2>
+          <p data-i18n="project.handball.context.copy">
+            Analyse des zones de tirs d’une équipe professionnelle de handball afin d’identifier les schémas offensifs les plus rentables.
+            Construction d’un jeu de données à partir de relevés vidéo, géolocalisation des tirs et modélisation des probabilités de succès
+            selon la position, le type d’action et la pression défensive.
+          </p>
+        </section>
+
+        <section class="reveal">
+          <h2 data-i18n="project.handball.approach.title">Approche &amp; outils</h2>
+          <ul class="bullets">
+            <li data-i18n="project.handball.approach.item1">Python, pandas, scikit-learn pour la préparation et l’entraînement</li>
+            <li data-i18n="project.handball.approach.item2">Modélisation XGBoost et calibration des probabilités</li>
+            <li data-i18n="project.handball.approach.item3">Dashboard Plotly pour restituer les cartes de tirs interactives</li>
+          </ul>
+        </section>
+
+        <section class="reveal">
+          <h2 data-i18n="project.links">Liens</h2>
+          <div class="cta-row">
+            <a class="btn btn-primary" href="https://github.com/..." data-i18n="project.code">Code</a>
+            <a class="btn btn-secondary" href="../index.html#projects-hero" data-i18n="project.back">Retour aux projets</a>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <p data-i18n="footer.note">© <span id="year"></span> Bilal Delais. Réalisé avec HTML/CSS/JS.</p>
+        <a href="#top" class="back-to-top" aria-label="Retour en haut" data-i18n-aria-label="footer.back">↑</a>
+      </div>
+    </footer>
+
+    <script src="../script.js"></script>
+  </body>
+</html>

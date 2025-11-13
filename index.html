@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#011226" />
+    <title>Bilal Delais — Portfolio IA/ML</title>
+    <meta name="description" content="Portfolio de Bilal Delais — futur ingénieur spécialisé en intelligence artificielle, apprentissage automatique et projets de recherche appliquée." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body data-page="index" data-resume-base="">
+    <div id="bg-effects" aria-hidden="true">
+      <div class="scroll-shape layer-1"></div>
+      <div class="scroll-shape layer-2"></div>
+      <div class="scroll-shape layer-3"></div>
+      <div class="scroll-shape layer-4"></div>
+    </div>
+    <header class="site-header" id="site-header">
+      <div class="container header-bar">
+        <a class="brand" href="#top" aria-label="Accueil" data-i18n-aria-label="nav.brand">Bilal&nbsp;Delais</a>
+        <div class="header-actions">
+          <button class="lang-toggle" type="button" id="language-toggle" data-i18n="toggle.label" data-i18n-aria-label="toggle.aria">Version anglaise</button>
+          <a class="btn btn-outline cv-link" href="assets/resume_french.pdf" target="_blank" rel="noopener" data-i18n="nav.cv">CV</a>
+          <button class="nav-toggle" type="button" aria-label="Ouvrir la navigation" aria-expanded="false" data-i18n-aria-label="nav.toggle">☰</button>
+        </div>
+      </div>
+    </header>
+
+    <aside class="side-nav" id="side-nav" aria-hidden="true" inert>
+      <nav class="nav">
+        <a href="#hero" class="active" data-i18n="nav.home">Accueil</a>
+        <a href="#experiences-hero" data-i18n="nav.experiences">Expériences</a>
+        <a href="#projects-hero" data-i18n="nav.projects">Projets</a>
+        <a href="#loisirs-hero" data-i18n="nav.hobbies">Loisirs</a>
+        <a href="#contact-hero" data-i18n="nav.contact">Contact</a>
+      </nav>
+    </aside>
+
+    <main id="top">
+      <!-- HERO -->
+      <section class="section hero reveal" id="hero">
+        <div class="container hero-grid">
+          <div class="hero-copy">
+            <p class="eyebrow" data-i18n="hero.eyebrow">Intelligence artificielle &amp; Data</p>
+            <h1 class="headline" data-i18n="hero.title">
+              Explorer à la croisée de l'IA et du spatial.
+            </h1>
+            <p class="lede" data-i18n="hero.lede">
+              Je suis Bilal, futur ingénieur passionné par l’exploration spatiale et l’intelligence artificielle.
+              À travers ce portfolio, je partage mes réalisations, mes expérimentations et les enseignements tirés de mes projets.
+            </p>
+            <div class="cta-row">
+              <a class="btn btn-primary magnetic" href="#projects" data-i18n="hero.cta.projects">Voir mes projets</a>
+              <a class="btn btn-outline" href="#contact-hero" data-i18n="hero.cta.contact">Me contacter</a>
+            </div>
+          </div>
+          <div class="hero-visual">
+            <div class="card profile-card reveal">
+              <div class="avatar" aria-hidden="true">
+                 <img src="assets/images/hero/portrait.jpg" alt="Photo de Bilal Delais" data-i18n-alt="hero.photo" />
+              </div>
+              <div class="profile-meta">
+                <h3>Bilal Delais</h3>
+                <p data-i18n="hero.profile">Étudiant ingénieur • IA/ML</p>
+              </div>
+            </div>
+            <div class="floating shape s1" aria-hidden="true"></div>
+            <div class="floating shape s2" aria-hidden="true"></div>
+            <div class="floating shape s3" aria-hidden="true"></div>
+          </div>
+        </div>
+        <div class="floating-skills" aria-hidden="true">
+          <button type="button" class="chip floating-skill floating-skill--one" tabindex="-1" data-i18n="hero.skill1">Deep Learning</button>
+          <button type="button" class="chip floating-skill floating-skill--two" tabindex="-1" data-i18n="hero.skill2">Modélisation</button>
+          <button type="button" class="chip floating-skill floating-skill--three" tabindex="-1" data-i18n="hero.skill3">Data Science</button>
+        </div>
+      </section>
+
+      <!-- EXPERIENCES -->
+      <section class="section reveal" id="experiences">
+        <div class="section-box reveal">
+          <div class="hero reveal" id="experiences-hero">
+            <div class="container hero-grid">
+              <div class="hero-copy">
+                <p class="eyebrow" data-i18n="exp.eyebrow">Expériences</p>
+                <h1 class="headline" data-i18n="exp.title">A la croisée du monde professionnel et académique</h1>
+                <p class="lede" data-i18n="exp.lede">
+                  Etant en formation d'ingénieur en intelligence artificielle et data à IMT Mines Alès, je suis sur le point de quitter le monde académique pour exploiter mes compétences en entreprise.
+                  Voici un aperçu de mon parcours professionnel et académique.
+                </p>
+              </div>
+              <div class="hero-visual">
+                <div class="card profile-card reveal">
+                  <div class="avatar" aria-hidden="true">
+                    <img src="assets/images/IMT.jpg" alt="Le campus de L'IMT Mines Alès" data-i18n-alt="exp.hero.image" />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="section-content" id="experience-professionnelle">
+            <div class="container">
+              <div class="section-head reveal">
+                <h2 class="title" data-i18n="exp.pro.title">Expériences professionnelles</h2>
+                <p class="muted" data-i18n="exp.pro.subtitle">Missions clés, responsabilités et résultats.</p>
+              </div>
+
+              <div class="experience-timeline">
+                <article class="experience-card reveal">
+                  <span class="timeline-dot" aria-hidden="true"></span>
+                  <header>
+                    <div class="experience-logo" aria-hidden="true"><span>SL</span></div>
+                    <div>
+                      <h3 data-i18n="exp.springlane.title">CTO — SpringLane</h3>
+                      <span class="experience-meta" data-i18n="exp.springlane.meta">SpringLane Juillet 2025 – présent · Paris, France - à distance </span>
+                    </div>
+                  </header>
+                  <p data-i18n="exp.springlane.summary">
+                    J'ai rejoint SpringLane en tant que CTO pour diriger le développement technique de leur écosystème innovant.
+                    Mon rôle consiste à superviser l'architecture logicielle, la gestion de l'infrastructure, et à encadrer l'équipe de développement.
+
+                  </p>
+                  <ul class="bullets">
+                    <li data-i18n="exp.springlane.point1">Conception et pilotage du développement d’un antivol basé sur les technologies RFID/NFC.</li>
+                    <li data-i18n="exp.springlane.point2">Définition de la roadmap produit (hardware + software) et coordination du MVP.</li>
+                    <li data-i18n="exp.springlane.point3">Optimisation de la BOM: réduction du coût unitaire des prototypes.</li>
+                    <li data-i18n="exp.springlane.point4">Développement du firmware et d’une application de test pour la validation.</li>
+                  </ul>
+                </article>
+              
+
+
+                <article class="experience-card reveal">
+                  <span class="timeline-dot" aria-hidden="true"></span>
+                  <header>
+                    <div class="experience-logo" aria-hidden="true"><span>USAM</span></div>
+                    <div>
+                      <h3 data-i18n="exp.usam.title">Chef de projet — Data Science</h3>
+                      <span class="experience-meta" data-i18n="exp.usam.meta">USAM Nîmes · Janvier 2025 – Avril 2025 · Nîmes, France</span>
+                  </div>
+                </header>
+                  <p data-i18n="exp.usam.summary">
+                    Pilotage d’un projet de R&D pour l’équipe féminine de handball (Nationale 1).
+                  </p>
+                  <ul class="bullets">
+                    <li data-i18n="exp.usam.point1">Conception d’un pipeline d’analyse vidéo : détection d’événements , structuration des données et synchronisation.</li>
+                    <li data-i18n="exp.usam.point2">Développement de modèles ML (régression logistique, XGBoost, forêts aléatoires) pour prédire les zones d’impact des tirs (zone de but subdivisée en 9 zones).
+                    </li>
+                    <li data-i18n="exp.usam.point3">Évaluation via des métriques avancées (F1-score, Brier score, AUC) et protocoles de validation croisée.</li>
+                  </ul>
+                </article>
+
+                <article class="experience-card reveal">
+                  <span class="timeline-dot" aria-hidden="true"></span>
+                  <header>
+                    <div class="experience-logo" aria-hidden="true"><span>AS</span></div>
+                    <div>
+                      <h3 data-i18n="exp.agena.title">Stage R&amp;D — Conception Mécanique de Systèmes Propulsifs</h3>
+                      <span class="experience-meta" data-i18n="exp.agena.meta">Agena Space · Août 2024 – Décembre 2024 · Talence, France</span>
+                  </div>
+                </header>
+                  <p data-i18n="exp.agena.summary">
+                    Contribution au développement de systèmes propulsifs HTP pour nanosatellites : conception et intégration.
+                  </p>
+                  <ul class="bullets">
+                    <li data-i18n="exp.agena.point1">Conception et modification de modèles 3D de composants et systèmes (SolidWorks).</li>
+                    <li data-i18n="exp.agena.point2">Production de plans techniques détaillés et dossiers d’assemblage.</li>
+                    <li data-i18n="exp.agena.point3">Participation à la fabrication et à l’assemblage de prototypes.</li>
+                    <li data-i18n="exp.agena.point4">Intégration et mise en place de sous-systèmes de propulsion.</li>
+                  </ul>
+                </article>
+              </div>
+            </div>
+          </div>
+
+          <div class="section-content" id="experience-academique">
+            <div class="container">
+              <div class="section-head reveal">
+                <h2 class="title" data-i18n="exp.edu.title">Parcours académique</h2>
+                <p class="muted" data-i18n="exp.edu.subtitle">Formation et spécialisations.</p>
+              </div>
+
+              <div class="experience-timeline">
+                <article class="experience-card reveal">
+                  <span class="timeline-dot" aria-hidden="true"></span>
+                  <header>
+                    <div class="experience-logo" aria-hidden="true"><span>IMT</span></div>
+                    <div>
+                      <h3 data-i18n="exp.edu.imt.title">École d’ingénieurs — Spécialisation IA &amp; Data</h3>
+                      <span class="experience-meta" data-i18n="exp.edu.imt.meta">2022 – 2026 · IMT Mines Alès</span>
+                  </div>
+                </header>
+                  <p data-i18n="exp.edu.imt.summary">
+                    Parcours Ingénieur avec double compétence systèmes mécatroniques et intelligence artificielle / data.
+                    En effet, après avoir réjoint le
+                    département mécatronique en 2023, j'ai rédoublé afin d'intégrer la spécialisation IA & Data en 2024.
+
+                   </p>
+                  <p data-i18n="exp.edu.imt.courses-intro">Parmi les cours suivis :</p>
+                    <ul class="bullets">
+                    <li data-i18n="exp.edu.imt.course1">apprentissage automatique supervisé et non supervisé</li>
+                    <li data-i18n="exp.edu.imt.course2">deep learning (CNN, RNN)</li>
+                    <li data-i18n="exp.edu.imt.course3">apprentissage par renforcement</li>
+                    <li data-i18n="exp.edu.imt.course4">collecte et visualisation de données</li>
+                    <li data-i18n="exp.edu.imt.course5">statistiques et probabilités avancées</li>
+                    <li data-i18n="exp.edu.imt.course6">aide à la décision</li>
+                    <li data-i18n="exp.edu.imt.course7">calcul et analyse numérique</li>
+
+                  </ul>
+                  <p data-i18n="exp.edu.imt.assos-intro">J'ai également participé à plusieurs associations étudiantes :</p>
+                  <ul class="bullets">
+                    <li data-i18n="exp.edu.imt.asso1">Président du Comité Oenologie (gestion d'évènements, partenariats, budget).</li>
+                    <li data-i18n="exp.edu.imt.asso2">Membre de l'équipe de basketball "Les Gorilles"</li>
+                    <li data-i18n="exp.edu.imt.asso3">Responsable bourse pour l'association de solidarité internationale Tsiky Zanaka</li>
+                  </ul>
+                </article>
+
+                <article class="experience-card reveal">
+                  <span class="timeline-dot" aria-hidden="true"></span>
+                  <header>
+                    <div class="experience-logo" aria-hidden="true"><span>CPGE</span></div>
+                    <div>
+                      <h3 data-i18n="exp.edu.cpge.title">Classes préparatoires scientifiques PCSI - PSI</h3>
+                      <span class="experience-meta" data-i18n="exp.edu.cpge.meta">2019 – 2022 · Lycée Gustave Eiffel, Bordeaux</span>
+                  </div>
+                </header>
+                  <p data-i18n="exp.edu.cpge.summary">
+                    Formation intensive en mathématiques, physique et informatique, préparant aux concours des grandes écoles d’ingénieurs.
+                  </p>
+
+                </article>
+
+                <article class="experience-card reveal">
+                  <span class="timeline-dot" aria-hidden="true"></span>
+                  <header>
+                    <div class="experience-logo" aria-hidden="true"><span>SI</span></div>
+                    <div>
+                      <h3 data-i18n="exp.edu.bac.title">Baccalauréat scientifique — Sciences de l’ingénieur</h3>
+                      <span class="experience-meta" data-i18n="exp.edu.bac.meta">2018 – 2019 · Lycée Albert Claveille, Périgueux</span>
+                  </div>
+                </header>
+                  <p data-i18n="exp.edu.bac.summary">
+                    Approche pluridisciplinaire mêlant mathématiques avancées et sciences de l’ingénieur avec réalisation de projets techniques.
+                  </p>
+                </article>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- PROJECTS -->
+      <section class="section reveal" id="projects-group">
+        <div class="section-box reveal">
+          <div class="hero reveal" id="projects-hero">
+            <div class="container hero-grid">
+              <div class="hero-copy">
+                <p class="eyebrow" data-i18n="projects.eyebrow">Sélection de projets</p>
+                <h1 class="headline" data-i18n="projects.title">Mes projets académique et personnels.</h1>
+                <p class="lede" data-i18n="projects.lede">
+                  Ceci est le catalogue de mes projets en intelligence artificielle et
+                  machine learning, réalisés dans le cadre de ma formation d'ingénieur
+                  ou par passion.
+                </p>
+              </div>
+              <div class="hero-visual">
+                <div class="card profile-card reveal">
+                  <div class="avatar" aria-hidden="true">
+                    <img src="assets/images/portrait2.JPG" alt="Aperçu de projets IA et data" data-i18n-alt="projects.card.image" />
+                  </div>
+                  <div class="profile-meta">
+                    <h3 data-i18n="projects.card.title">Explorateur de projets</h3>
+                    <p data-i18n="projects.card.copy">Filtrez par compétences ou recherchez un mot-clé pour en savoir plus.</p>
+                  </div>
+                </div>
+                <div class="floating shape s1" aria-hidden="true"></div>
+                <div class="floating shape s2" aria-hidden="true"></div>
+                <div class="floating shape s3" aria-hidden="true"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="section-content" id="projects">
+            <div class="container">
+              <div class="section-head reveal">
+                <h2 class="title" data-i18n="projects.library.title">Bibliothèque de projets</h2>
+                
+              </div>
+
+              <div class="projects-toolbar" role="search">
+                <label class="field search-field">
+                  
+                  <input type="search" id="projects-search" name="projects-search" placeholder="Rechercher un projet..." autocomplete="off" spellcheck="false" data-i18n-placeholder="projects.library.search" />
+                </label>
+                <div class="sort-field" role="group" aria-label="Trier par date" data-i18n-aria-label="projects.library.sort">
+                  <button type="button" class="chip sort-option active" data-sort="newest" aria-pressed="true" data-i18n="projects.library.newest">Plus récents</button>
+                  <button type="button" class="chip sort-option" data-sort="oldest" aria-pressed="false" data-i18n="projects.library.oldest">Plus anciens</button>
+                </div>
+              </div>
+
+              <div class="filters" id="filters"></div>
+              <div class="grid projects-grid" id="projects-grid" aria-live="polite"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- LOISIRS -->
+      <section class="section reveal" id="loisirs-section">
+        <div class="section-box reveal">
+          <div class="hero reveal" id="loisirs-hero">
+            <div class="container hero-grid">
+              <div class="hero-copy">
+                <p class="eyebrow" data-i18n="hobbies.eyebrow">Au-delà de l’IA</p>
+                <h1 class="headline" data-i18n="hobbies.title">Cultiver la curiosité et <span class="accent-underline">l’équilibre</span> au quotidien.</h1>
+                <p class="lede" data-i18n="hobbies.lede">
+                  Sport collectif, balades à moto, tournoi d'échecs… Ces activités nourrissent ma créativité et renforcent l’esprit d’équipe que j’apporte à mes projets.
+                </p>
+              </div>
+              <div class="hero-visual">
+                <div class="card profile-card reveal">
+                  <div class="avatar" aria-hidden="true">
+                    <img src="assets/images/loisirs/panier.JPG" alt="Moment de loisir à moto" data-i18n-alt="hobbies.hero.image" />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="section-content" id="loisirs">
+            <div class="container">
+              <div class="section-head reveal">
+                <h2 class="title" data-i18n="hobbies.section.title">Loisirs &amp; passions</h2>
+                <p class="muted" data-i18n="hobbies.section.subtitle">Ce qui me motive en dehors du clavier.</p>
+              </div>
+
+              <div class="experience-timeline">
+                <article class="experience-card reveal">
+                  <header>
+                    <h3 data-i18n="hobbies.basket.title">Basketball &amp; esprit d’équipe</h3>
+                    <span class="experience-meta" data-i18n="hobbies.basket.meta">Club universitaire · Ailier fort</span>
+                  </header>
+                  <p data-i18n="hobbies.basket.summary">
+                    Le basketball m’apprend la stratégie, la réactivité et la communication en temps réel.
+                    Sur le terrain, chaque décision prise en une fraction de seconde influence le collectif :
+                     un excellent parallèle avec les projets tech.
+                     Joueur depuis le collège, j’ai évolué en équipe universitaire et participé à plusieurs tournois (cf linkedin).
+                     Je continue aujourd'hui cette pratique au sein de l'équipe de l'école IMT Mines Alès : les gorilles d'Alès. (cf photo)
+                  </p>
+                  <div class="leisure-gallery">
+                    <figure>
+                      <img src="assets/images/loisirs/gorilles.JPEG" alt="Equipe de basketball universitaire" data-i18n-alt="hobbies.basket.img1" />
+                      <figcaption data-i18n="hobbies.basket.fig1">L'équipe au "Cartel des Mines" - un tournois inter école d'ingénieurs</figcaption>
+                  </figure>
+                    <figure>
+                      <img class="focus-haut" src="assets/images/loisirs/gorillehaut.png" alt="Championnat de france" data-i18n-alt="hobbies.basket.img2" />
+                      <figcaption data-i18n="hobbies.basket.fig2">L’équipe au Championnats de france universitaire 2024-2025</figcaption>
+                  </figure>
+                </div>
+              </article>
+
+              <article class="experience-card reveal">
+                  <header>
+                    <h3 data-i18n="hobbies.moto.title">Moto et création de contenu</h3>
+                    <span class="experience-meta" data-i18n="hobbies.moto.meta">Voyages et créativité</span>
+                  </header>
+                  <p data-i18n="hobbies.moto.summary">
+                    J'aime me balader à moto et filmer mes aventures. La moto combine pour moi passion, rigueur
+                    et créativité : la conduite m'apprend à gérer la prise de risque, la concentration et la réactivité.
+                    J'essaye d'accompagner cette pratique avec la création de contenu vidéo autour de mon expérience.
+                    Cela me permet de développer mes compétences en montage vidéo et storytelling, utiles pour
+                    valoriser un projet ou une idée.
+                  </p>
+                  <div class="leisure-gallery">
+                    <figure>
+                      <img src="assets/images/loisirs/motohaut.png" alt="Photo de moi à moto" data-i18n-alt="hobbies.moto.img1" />
+                      <figcaption data-i18n="hobbies.moto.fig1">Photo de moi à moto</figcaption>
+                  </figure>
+                    <figure>
+                      <img src="assets/images/loisirs/pov.jpg" alt="Photo coucher de soleil" data-i18n-alt="hobbies.moto.img2" />
+                      <figcaption data-i18n="hobbies.moto.fig2">Sortie le soir</figcaption>
+                  </figure>
+                </div>
+              </article>
+
+              <article class="experience-card reveal">
+                  <header>
+                    <h3 data-i18n="hobbies.chess.title">Joueur d'échecs amateur</h3>
+                    <span class="experience-meta" data-i18n="hobbies.chess.meta">Reflexion, et jeux de société</span>
+                  </header>
+                  <p data-i18n="hobbies.chess.summary">
+                    La pratique des échecs nourrit ma capacité d'analyse et mon esprit stratégique.
+                    C'est une école de patience, de logique et de résilience, où l'erreur devient une source
+                    d'apprentissage. Ces qualités se traduisent directement dans mon approche des projets techniques,
+                    où planification et adaptation sont clés.
+                  </p>
+                  <div class="leisure-gallery">
+                    <figure>
+                      <img src="assets/images/loisirs/chess.jpg" alt="Partie d'échecs" data-i18n-alt="hobbies.chess.img1" />
+                      <figcaption data-i18n="hobbies.chess.fig1">Plateau de jeu en cours de partie</figcaption>
+                  </figure>
+                    
+                  </div>
+                </article>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CONTACT -->
+      <section class="section reveal" id="contact">
+        <div class="section-box reveal">
+          <div class="hero reveal" id="contact-hero">
+            <div class="container hero-grid">
+              <div class="hero-copy">
+                <p class="eyebrow" data-i18n="contact.eyebrow">Entrons en contact</p>
+                <h1 class="headline" data-i18n="contact.title">Contactez moi ou découvrez mes autres travaux.</h1>
+                <p class="lede" data-i18n="contact.lede">
+                  Je suis ouvert aux stages, aux collaborations et aux défis concrets qu'ils soient liés au spatial ou non.
+                  Écrivez-moi afin d'en discuter plus en détails.
+                </p>
+                <div class="cta-row">
+                  <a class="btn btn-primary magnetic" href="mailto:bilal.delais@etu.mines-ales.fr" data-i18n="contact.cta.email">Écrivez-moi</a>
+                  <a class="btn btn-outline" href="https://www.linkedin.com/in/bilal-delais-8903b518b/" target="_blank" rel="noopener" data-i18n="contact.cta.linkedin">LinkedIn</a>
+                  <a class="btn btn-outline" href="https://github.com/bilaldls" target="_blank" rel="noopener" data-i18n="contact.cta.github">GitHub</a>
+                </div>
+              </div>
+              <div class="hero-visual">
+                <div class="card profile-card reveal">
+                  <div class="avatar" aria-hidden="true">
+                    <img src="assets/images/contact.png" alt="logo de contact" />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer reveal">
+      <div class="container footer-grid">
+        <p data-i18n="footer.note">© <span id="year"></span> Bilal Delais. Réalisé avec HTML/CSS/JS.</p>
+        <a href="#top" class="back-to-top" aria-label="Retour en haut" data-i18n-aria-label="footer.back">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <circle cx="12" cy="12" r="10" stroke="#6cf0b6" stroke-width="1.2" opacity="0.5" />
+            <path d="M8 12l4-4 4 4" stroke="#6cf0b6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+      </div>
+    </footer>
+
+    <script src="projects.data.js"></script>
+    <script src="script.js"></script>
+  </body>
+  </html>

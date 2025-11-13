@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <title>Poker ML – Bilal Delais</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+  <body data-page="project-poker" data-resume-base="../">
+    <!-- Header identique aux autres pages -->
+    <header class="site-header" id="site-header">
+      <div class="container header-bar">
+        <a class="brand" href="../index.html#top" aria-label="Accueil" data-i18n-aria-label="nav.brand">Bilal&nbsp;Delais</a>
+        <div class="header-actions">
+          <button class="lang-toggle" type="button" id="language-toggle" data-i18n="toggle.label" data-i18n-aria-label="toggle.aria">Version anglaise</button>
+          <a class="btn btn-outline cv-link" href="../assets/resume_french.pdf" target="_blank" data-i18n="nav.cv">CV</a>
+          <button class="nav-toggle" type="button" aria-label="Ouvrir la navigation" aria-expanded="false" data-i18n-aria-label="nav.toggle">☰</button>
+        </div>
+      </div>
+    </header>
+
+    <aside class="side-nav" id="side-nav" aria-hidden="true" inert>
+      <nav class="nav">
+        <a href="../index.html#top" data-i18n="nav.home">Accueil</a>
+        <a href="../experiences.html" data-i18n="nav.experiences">Expériences</a>
+        <a href="../projects.html" data-i18n="nav.projects">Projets</a>
+        <a href="../loisirs.html" data-i18n="nav.hobbies">Loisirs</a>
+        <a href="../contact.html" data-i18n="nav.contact">Contact</a>
+      </nav>
+    </aside>
+
+    <main class="section">
+      <div class="container">
+        <h1 class="title" data-i18n="project.poker.title">Prédiction de résultats d'une partie de Poker</h1>
+        <p class="muted" data-i18n="project.poker.meta">Machine learning • Data Science • 2024</p>
+
+        <section class="reveal">
+          <h2 data-i18n="project.poker.context.title">Contexte</h2>
+          <p data-i18n="project.poker.context.copy">
+            Projet de modélisation autour du poker visant à estimer la probabilité de victoire d’un joueur à chaque étape de la partie.
+            Constitution d’un dataset à partir de mains historiques, extraction de features de jeu (position, mises, style), puis entraînement
+            de modèles gradient boosting et réseaux neuronaux pour comparer leurs performances.
+          </p>
+        </section>
+
+        <section class="reveal">
+          <h2 data-i18n="project.poker.approach.title">Approche &amp; outils</h2>
+          <ul class="bullets">
+            <li data-i18n="project.poker.approach.item1">Python, scikit-learn, XGBoost pour la modélisation</li>
+            <li data-i18n="project.poker.approach.item2">Analyse exploratoire sous pandas/seaborn</li>
+            <li data-i18n="project.poker.approach.item3">Prétraitement des données : encodage des variables catégorielles, gestion des valeurs manquantes, normalisation</li>
+            <li data-i18n="project.poker.approach.item4">Évaluation des modèles via cross-validation, optimisation des hyperparamètres avec recherche en grille</li>
+          </ul>
+        </section>
+
+        <section class="reveal">
+          <h2 data-i18n="project.links">Liens</h2>
+          <div class="cta-row">
+            <a class="btn btn-primary" href="https://github.com/bilaldls/IMT_Poker_ML" data-i18n="project.code">Code</a>
+            <a class="btn btn-secondary" href="../index.html#projects-hero" data-i18n="project.back">Retour aux projets</a>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <p data-i18n="footer.note">© <span id="year"></span> Bilal Delais. Réalisé avec HTML/CSS/JS.</p>
+        <a href="#top" class="back-to-top" aria-label="Retour en haut" data-i18n-aria-label="footer.back">↑</a>
+      </div>
+    </footer>
+
+    <script src="../script.js"></script>
+  </body>
+</html>
