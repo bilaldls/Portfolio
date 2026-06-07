@@ -46,7 +46,7 @@
       <div class="container hero-grid">
         <div class="hero-copy reveal">
           <p class="eyebrow">Ingénieur IA / Data Science · IMT Mines Alès</p>
-          <h1>Détecter l'invisible dans les données critiques.</h1>
+          <h1>Explorer à la croisée de l'IA et du spatial</h1>
           <p class="lede">Élève-ingénieur en intelligence artificielle &amp; data science, en stage de fin d'études chez ArianeGroup. Je conçois des pipelines de deep learning de bout en bout — détection d'anomalies, séries temporelles, computer vision — pour l'aérospatial, la défense et l'industrie de pointe.</p>
           <div class="status-line"><span class="dot"></span>En poste chez ArianeGroup · en recherche d'un CDI dès octobre 2026</div>
           <div class="cta-row">
@@ -87,9 +87,8 @@
       <div class="container">
         <div class="section-head reveal">
           <p class="eyebrow">01 — Le parcours</p>
-          <h2>Une trajectoire, une cohérence</h2>
+          <h2>Mon parcours professionnel et académique</h2>
         </div>
-        <p class="lead-quote reveal">« De la prépa PSI aux bancs d'essai d'ArianeGroup, une même ligne directrice : appliquer les méthodes les plus avancées de l'IA à des problèmes industriels réels, là où la fiabilité n'est pas une option. »</p>
 
         <div class="timeline" style="margin-top:42px">
           <article class="xp featured reveal">
@@ -216,21 +215,34 @@
           <p class="sub">Travaux académiques et de recherche, présentés par problème, approche et résultat.</p>
         </div>
         <div class="proj-grid">
-          <article class="proj reveal" data-report="assets/reports/sgp4.pdf">
-            <div class="proj-top"><span class="proj-cat">Aérospatial · Deep Learning</span><span class="proj-glyph">🛰</span></div>
+          <article class="proj reveal" data-report="assets/reports/adaptation-de-domaine.pdf">
+            <div class="proj-top"><span class="proj-cat">Recherche · Vision</span></div>
             <div class="proj-body">
-              <h3>Correction par deep learning du propagateur orbital SGP4</h3>
-              <p class="goal">Améliorer la précision des prédictions de trajectoires orbitales.</p>
-              <p>Apprentissage du résidu d'erreur du propagateur SGP4 sur données TLE (ISS, Hubble). Benchmark MLP / LSTM / Transformer : l'encodeur Transformer réduit l'erreur de position de façon stable et physiquement cohérente.</p>
+              <h3>Adaptation de Domaine</h3>
+              <p class="goal">Quantifier le « domain shift » entre jeux de données pour guider le choix du dataset source en détection d'objets few-shot.</p>
+              <p>Mesure du décalage de distribution entre 13 jeux d'images via des classifieurs few-shot sur embeddings ResNet-50 et des distances distributionnelles (Wasserstein-1, MK-MMD), agrégées en un Domain Shift Index (DSI) interprétable.</p>
             </div>
-            <div class="proj-tech"><span class="chip">Python</span><span class="chip">TensorFlow</span><span class="chip">Transformer</span><span class="chip">LSTM</span><span class="chip">Données TLE</span></div>
-            <!-- Détail étendu affiché dans la modale — À COMPLÉTER par Bilal -->
-            <div class="proj-detail" hidden></div>
-            <div class="proj-foot"><a class="proj-link" href="https://github.com/bilaldls/IMT_DeepL_project" target="_blank" rel="noopener">Voir le code ↗</a><button type="button" class="proj-more">Détails →</button></div>
+            <div class="proj-tech"><span class="chip">Python</span><span class="chip">ResNet-50</span><span class="chip">Few-shot learning</span><span class="chip">Wasserstein-1</span><span class="chip">MK-MMD</span><span class="chip">Detectron2</span></div>
+            <!-- Détail étendu affiché dans la modale (source : rapport "Domain Shift Analysis", Sun/Delais/Vial 2026) -->
+            <div class="proj-detail" hidden>
+              <p><strong>Travail académique — IMT Mines Alès</strong> (S. Sun, B. Delais, C. Vial · février 2026).</p>
+              <p>Le <em>domain shift</em> survient lorsque la distribution des données d'entraînement (domaine source) diffère de celle des données cibles, dégradant les performances en détection d'objets sur imagerie aérienne. Ce projet propose un cadre systématique pour <strong>mesurer</strong> ce décalage et <strong>classer les datasets sources</strong> selon leur proximité avec une cible aérienne.</p>
+              <p><strong>Méthode.</strong> Extraction d'embeddings via un encodeur pré-entraîné (ResNet-50 / ImageNet) en lecture <em>streaming</em>. Pour chaque paire de domaines, des classifieurs légers (régression logistique, MLP, discriminateur de domaine) apprennent à les séparer sous un nombre croissant d'exemples (<em>shots</em>). Le tout est condensé en un <strong>Domain Shift Index (DSI)</strong> agrégeant courbes d'apprentissage few-shot, vitesse de convergence, stabilité et distances distributionnelles (Wasserstein-1, MK-MMD).</p>
+              <p><strong>Résultats clés</strong> (13 datasets, cibles DOTA &amp; DIOR) :</p>
+              <ul>
+                <li>Les <strong>statistiques de fond</strong> dominent le shift : DIOR-BG_BLURRY obtient le DSI le plus faible (24,9).</li>
+                <li>Les datasets aériens (DOTA, XVIEW, DIOR, CADOT) forment un <strong>cluster à faible shift</strong>.</li>
+                <li>Les datasets sémantiquement éloignés (OKTOBERFEST, ARTAXOR, DEEPFRUITS) sont trivialement séparables — donc inadaptés comme source.</li>
+                <li>COCO se révèle étonnamment compétitif malgré l'absence de vue aérienne.</li>
+                <li>Classements stables entre cibles (r ≈ 0,96) et entre classifieurs.</li>
+                <li>Transfert few-shot DOTA → DIOR (10-shot, Detectron2) : AP 41,97 / AP50 63,98.</li>
+              </ul>
+            </div>
+            <div class="proj-foot"><a class="proj-link" href="https://github.com/cyyyp100/Domain_Shift_Study" target="_blank" rel="noopener">Voir le code ↗</a><button type="button" class="proj-more">Détails →</button></div>
           </article>
 
           <article class="proj reveal" data-report="assets/reports/nodulocc.pdf">
-            <div class="proj-top"><span class="proj-cat">Computer Vision · Santé</span><span class="proj-glyph">⊕</span></div>
+            <div class="proj-top"><span class="proj-cat">Computer Vision · Santé</span></div>
             <div class="proj-body">
               <h3>NoduLoCC 2026 — Challenge IA médicale</h3>
               <p class="goal">Détecter des nodules pulmonaires sur radiographies.</p>
@@ -242,17 +254,17 @@
             <div class="proj-foot"><span class="proj-note">Challenge académique</span><button type="button" class="proj-more">Détails →</button></div>
           </article>
 
-          <article class="proj reveal" data-report="assets/reports/auto-supervise.pdf">
-            <div class="proj-top"><span class="proj-cat">Recherche · Vision</span><span class="proj-glyph">◈</span></div>
+          <article class="proj reveal" data-report="assets/reports/sgp4.pdf">
+            <div class="proj-top"><span class="proj-cat">Aérospatial · Deep Learning</span></div>
             <div class="proj-body">
-              <h3>Auto-supervisé &amp; adaptation de domaine</h3>
-              <p class="goal">Apprendre avec peu d'étiquettes, transférer entre domaines.</p>
-              <p>Apprentissage auto-supervisé et adaptation de domaine (CLIP, SimCLR, DANN) ; détection d'objets par DETR sur caméras événementielles (DSEC-MOD).</p>
+              <h3>Correction par deep learning du propagateur orbital SGP4</h3>
+              <p class="goal">Améliorer la précision des prédictions de trajectoires orbitales.</p>
+              <p>Apprentissage du résidu d'erreur du propagateur SGP4 sur données TLE (ISS, Hubble). Benchmark MLP / LSTM / Transformer : l'encodeur Transformer réduit l'erreur de position de façon stable et physiquement cohérente.</p>
             </div>
-            <div class="proj-tech"><span class="chip">PyTorch</span><span class="chip">CLIP</span><span class="chip">SimCLR</span><span class="chip">DANN</span><span class="chip">DETR</span></div>
+            <div class="proj-tech"><span class="chip">Python</span><span class="chip">TensorFlow</span><span class="chip">Transformer</span><span class="chip">LSTM</span><span class="chip">Données TLE</span></div>
             <!-- Détail étendu affiché dans la modale — À COMPLÉTER par Bilal -->
             <div class="proj-detail" hidden></div>
-            <div class="proj-foot"><span class="proj-note">Projet académique</span><button type="button" class="proj-more">Détails →</button></div>
+            <div class="proj-foot"><a class="proj-link" href="https://github.com/bilaldls/IMT_DeepL_project" target="_blank" rel="noopener">Voir le code ↗</a><button type="button" class="proj-more">Détails →</button></div>
           </article>
         </div>
       </div>
