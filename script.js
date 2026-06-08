@@ -32,14 +32,114 @@
   window.addEventListener('scroll', onScroll, { passive: true });
   onScroll();
 
+  /* ---- Traduction FR / EN ---- */
+  var LANG_KEY = 'site-lang';
+  var lang = 'fr';
+  var langBtn = $('.lang-toggle');
+
+  function translateText(el) {
+    if (el.dataset.fr === undefined) el.dataset.fr = el.innerHTML;
+    el.innerHTML = (lang === 'en' && el.dataset.en !== undefined) ? el.dataset.en : el.dataset.fr;
+  }
+  function translateAria(el) {
+    if (el.dataset.frAria === undefined) el.dataset.frAria = el.getAttribute('aria-label') || '';
+    var v = (lang === 'en' && el.dataset.enAria !== undefined) ? el.dataset.enAria : el.dataset.frAria;
+    if (v) el.setAttribute('aria-label', v);
+  }
+  function applyLang(next) {
+    lang = (next === 'en') ? 'en' : 'fr';
+    document.documentElement.lang = lang;
+    $$('[data-en]').forEach(translateText);
+    $$('[data-en-aria]').forEach(translateAria);
+    $$('.cv-link').forEach(function (a) {
+      if (a.dataset.hrefFr === undefined) a.dataset.hrefFr = a.getAttribute('href');
+      a.setAttribute('href', (lang === 'en' && a.dataset.hrefEn) ? a.dataset.hrefEn : a.dataset.hrefFr);
+    });
+    if (langBtn) {
+      langBtn.textContent = (lang === 'en') ? 'FR' : 'EN';
+      langBtn.setAttribute('aria-label', (lang === 'en') ? 'Passer en français' : 'Switch to English');
+    }
+    try { localStorage.setItem(LANG_KEY, lang); } catch (e) {}
+    if (openCard && modal && modal.getAttribute('aria-hidden') === 'false') buildBody(openCard);
+  }
+  if (langBtn) langBtn.addEventListener('click', function () { applyLang(lang === 'en' ? 'fr' : 'en'); });
+
   /* ---- Modale détail projet ---- */
   var modal = $('#proj-modal');
   var modalBody = $('#proj-modal-body');
   var projects = $$('.proj');
+  var openCard = null;
+  var lastFocus = null;
+
+  function buildBody(card) {
+    var frag = document.createElement('div');
+
+    var top = card.querySelector('.proj-top');
+    if (top) frag.appendChild(top.cloneNode(true));
+
+    var body = card.querySelector('.proj-body');
+    if (body) {
+      var clone = body.cloneNode(true);
+      var h3 = clone.querySelector('h3');
+      if (h3) h3.id = 'proj-modal-title';
+      frag.appendChild(clone);
+    }
+
+    // Texte étendu, dans la langue active (.proj-detail [data-lang="fr|en"]).
+    var detailWrap = card.querySelector('.proj-detail');
+    var detail = detailWrap ? detailWrap.querySelector('[data-lang="' + lang + '"]') : null;
+    if (detail && detail.innerHTML.trim()) {
+      var d = document.createElement('div');
+      d.className = 'proj-modal-detail';
+      d.innerHTML = detail.innerHTML;
+      frag.appendChild(d);
+    }
+
+    var tech = card.querySelector('.proj-tech');
+    if (tech) frag.appendChild(tech.cloneNode(true));
+
+    // Liens : code GitHub (repris de la carte) + rapport PDF (si disponible).
+    var links = document.createElement('div');
+    links.className = 'proj-modal-links';
+    var code = card.querySelector('.proj-link');
+    if (code) {
+      var a = code.cloneNode(true);
+      a.className = 'btn btn-primary';
+      links.appendChild(a);
+    }
+    if (card.getAttribute('data-report-ready') === '1') {
+      var rep = document.createElement('a');
+      rep.className = 'btn btn-outline';
+      rep.href = card.getAttribute('data-report');
+      rep.target = '_blank';
+      rep.rel = 'noopener';
+      rep.textContent = (lang === 'en') ? 'PDF report ↗' : 'Rapport PDF ↗';
+      links.appendChild(rep);
+    }
+    if (links.children.length) frag.appendChild(links);
+
+    modalBody.innerHTML = '';
+    modalBody.appendChild(frag);
+  }
+
+  function openModal(card) {
+    openCard = card;
+    lastFocus = document.activeElement;
+    buildBody(card);
+    modal.setAttribute('aria-hidden', 'false');
+    document.body.classList.add('modal-open');
+    var closeBtn = modal.querySelector('.proj-modal-close');
+    if (closeBtn) closeBtn.focus();
+  }
+
+  function closeModal() {
+    openCard = null;
+    modal.setAttribute('aria-hidden', 'true');
+    document.body.classList.remove('modal-open');
+    if (lastFocus && lastFocus.focus) lastFocus.focus();
+  }
 
   if (modal && modalBody && projects.length) {
-    var lastFocus = null;
-
     // Détection auto des rapports PDF : le bouton n'apparaît que si le fichier existe.
     projects.forEach(function (card) {
       var report = card.getAttribute('data-report');
@@ -49,76 +149,10 @@
         .catch(function () { /* fichier absent : pas de bouton, pas de lien cassé */ });
     });
 
-    function buildBody(card) {
-      var frag = document.createElement('div');
-
-      var top = card.querySelector('.proj-top');
-      if (top) frag.appendChild(top.cloneNode(true));
-
-      var body = card.querySelector('.proj-body');
-      if (body) {
-        var clone = body.cloneNode(true);
-        var h3 = clone.querySelector('h3');
-        if (h3) h3.id = 'proj-modal-title';
-        frag.appendChild(clone);
-      }
-
-      // Texte étendu (rempli par Bilal dans .proj-detail) — affiché s'il est non vide.
-      var detail = card.querySelector('.proj-detail');
-      if (detail && detail.innerHTML.trim()) {
-        var d = document.createElement('div');
-        d.className = 'proj-modal-detail';
-        d.innerHTML = detail.innerHTML;
-        frag.appendChild(d);
-      }
-
-      var tech = card.querySelector('.proj-tech');
-      if (tech) frag.appendChild(tech.cloneNode(true));
-
-      // Liens : code GitHub (repris de la carte) + rapport PDF (si disponible).
-      var links = document.createElement('div');
-      links.className = 'proj-modal-links';
-      var code = card.querySelector('.proj-link');
-      if (code) {
-        var a = code.cloneNode(true);
-        a.className = 'btn btn-primary';
-        links.appendChild(a);
-      }
-      if (card.getAttribute('data-report-ready') === '1') {
-        var rep = document.createElement('a');
-        rep.className = 'btn btn-outline';
-        rep.href = card.getAttribute('data-report');
-        rep.target = '_blank';
-        rep.rel = 'noopener';
-        rep.textContent = 'Rapport PDF ↗';
-        links.appendChild(rep);
-      }
-      if (links.children.length) frag.appendChild(links);
-
-      modalBody.innerHTML = '';
-      modalBody.appendChild(frag);
-    }
-
-    function openModal(card) {
-      lastFocus = document.activeElement;
-      buildBody(card);
-      modal.setAttribute('aria-hidden', 'false');
-      document.body.classList.add('modal-open');
-      var closeBtn = modal.querySelector('.proj-modal-close');
-      if (closeBtn) closeBtn.focus();
-    }
-
-    function closeModal() {
-      modal.setAttribute('aria-hidden', 'true');
-      document.body.classList.remove('modal-open');
-      if (lastFocus && lastFocus.focus) lastFocus.focus();
-    }
-
     projects.forEach(function (card) {
       card.style.cursor = 'pointer';
       card.addEventListener('click', function (e) {
-        // Laisser les liens internes (GitHub) se comporter normalement.
-        if (e.target.closest('a')) return;
+        if (e.target.closest('a')) return; // laisser les liens internes (GitHub) agir
         openModal(card);
       });
     });
@@ -130,4 +164,9 @@
       if (e.key === 'Escape' && modal.getAttribute('aria-hidden') === 'false') closeModal();
     });
   }
+
+  // Langue initiale (préférence mémorisée).
+  var saved = null;
+  try { saved = localStorage.getItem(LANG_KEY); } catch (e) {}
+  applyLang(saved === 'en' ? 'en' : 'fr');
 })();
