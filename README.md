@@ -1,49 +1,53 @@
+# Portfolio — Bilal Delais
 
-⸻
+Personal portfolio built with **HTML / CSS / JavaScript** and deployed on **Vercel**.
+It showcases my work in Artificial Intelligence and Machine Learning, along with my academic and professional background.
 
-Portfolio — Bilal Delais
+🔗 **Live site:** [bilaldelais.com](https://bilaldelais.com)
 
-Personal portfolio built with HTML / CSS / JavaScript and deployed on Vercel.
-It showcases my projects in Artificial Intelligence, Machine Learning, as well as my academic and professional background.
+## Features
 
- Features
-	•	Modern and fully responsive interface
-	•	French / English language toggle
-	•	Project browser with search and chronological sorting
-	•	Smooth animations and minimalist design
-	•	Dynamic project loading via projects.data.js
+- Single-page design, modern and fully responsive (mobile-first)
+- French / English language toggle (preference saved across visits)
+- Clickable project cards opening a detail modal (extended description, GitHub link and PDF report when available)
+- Self-hosted **Lora** serif typeface — no external font dependency
+- Smooth scroll-reveal animations and a minimalist, high-contrast design
 
- Project Structure
+## Project Structure
 
+```
 /
 ├── index.html
 ├── styles.css
 ├── script.js
-├── projects.data.js
-├── assets/
-│   ├── images/
-│   ├── resume_french.pdf
-│   └── ...
-└── README.md
+└── assets/
+    ├── fonts/                  # Self-hosted Lora (variable + italic)
+    ├── images/                 # Portraits, campus and team photos
+    ├── reports/                # Project PDF reports
+    ├── CV_Bilal_Delais.pdf     # Résumé (FR)
+    └── CV_Bilal_Delais_EN.pdf  # Résumé (EN)
+```
 
- Deployment
+## Deployment
 
-The website is deployed using Vercel:
-	•	Automatic builds on each Git push
-	•	Fast and optimized hosting
-	•	Native support for static websites
+The website is deployed with **Vercel**:
 
- Technologies Used
-	•	HTML5
-	•	CSS3
-	•	Vanilla JavaScript
-	•	Google Fonts (Montserrat)
-    •	OpenAI codex
-	•	Vercel
+- Automatic builds on each Git push
+- Fast, optimized static hosting
+- Production branch: `main`
 
- Contact
-	•	Email: bilal.delais@etu.mines-ales.fr
-	•	LinkedIn: https://www.linkedin.com/in/bilal-delais-8903b518b/
-	•	GitHub: https://github.com/bilaldls
+## Technologies Used
 
-⸻
+- HTML5
+- CSS3 (custom properties, responsive grid, no framework)
+- Vanilla JavaScript (no dependencies)
+- Lora (self-hosted, SIL Open Font License)
+- OpenAI Codex
+- Claude Code
+- Vercel
+
+## Contact
+
+- **Email:** bilal.delais@etu.mines-ales.fr
+- **LinkedIn:** [bilal-delais](https://www.linkedin.com/in/bilal-delais-8903b518b/)
+- **GitHub:** [bilaldls](https://github.com/bilaldls)
