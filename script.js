@@ -101,7 +101,7 @@
     // Liens : code GitHub (repris de la carte) + rapport PDF (si disponible).
     var links = document.createElement('div');
     links.className = 'proj-modal-links';
-    var code = card.querySelector('.proj-link');
+    var code = card.querySelector('.proj-link:not(.proj-paper)');
     if (code) {
       var a = code.cloneNode(true);
       a.className = 'btn btn-primary';
@@ -113,7 +113,7 @@
       rep.href = card.getAttribute('data-report');
       rep.target = '_blank';
       rep.rel = 'noopener';
-      rep.textContent = (lang === 'en') ? 'PDF report ↗' : 'Rapport PDF ↗';
+      rep.textContent = (lang === 'en') ? 'View the paper ↗' : 'Voir le papier ↗';
       links.appendChild(rep);
     }
     if (links.children.length) frag.appendChild(links);

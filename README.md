@@ -48,6 +48,6 @@ The website is deployed with **Vercel**:
 
 ## Contact
 
-- **Email:** bilal.delais@etu.mines-ales.fr
+- **Email:** bilal.delais@mines-ales.org
 - **LinkedIn:** [bilal-delais](https://www.linkedin.com/in/bilal-delais-8903b518b/)
 - **GitHub:** [bilaldls](https://github.com/bilaldls)
